@@ -1,0 +1,32 @@
+.comment-container {
+    width: 100%;
+    height: 50%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.comment-container h1, p, li {
+    color: #fff;
+    width: 100%;
+}
+
+.comment-container h1, p {
+    text-align: center;
+}
+
+.comment-container h1 {
+    padding-bottom: 1rem;
+    position: sticky;
+}
+
+.comment-wrapper {
+    width: 100%;
+}
+
+.comment-container li {
+    list-style: none;
+}
+

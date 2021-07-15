@@ -1,0 +1,230 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Courier New", Courier, monospace;
+  background-color: #e8e8e8;
+  overflow: hidden;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+button {
+  outline: none;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.7rem;
+  padding: 2rem;
+  background-color: rgb(216, 216, 216);
+  box-shadow: 10px 15px 50px -10px rgb(47, 79, 79);
+}
+
+.form h1 {
+  color: rgb(47, 79, 79);
+  padding-bottom: 2rem;
+  text-align: center;
+}
+
+.input-container {
+  position: relative;
+}
+
+.input-container input {
+  width: 100%;
+  padding: 0.8rem 0;
+  font-size: 1rem;
+  color: rgb(47, 79, 79);
+  margin-bottom: 1rem;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+  letter-spacing: 0.14rem;
+}
+
+.input-container label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0.8rem 0;
+  font-size: 1rem;
+  color: #fff;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.input-container input:focus ~ label,
+.input-container input:valid ~ label {
+  top: -1.2rem;
+  left: 0;
+  color: rgb(47, 79, 79);
+  font-size: 0.8rem;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.checkbox-container label {
+  font-size: 0.8rem;
+  letter-spacing: normal;
+}
+
+.checkbox {
+  position: relative;
+  appearance: none;
+  border-radius: 1rem;
+  background-color: #fff;
+  width: 2rem;
+  height: 1rem;
+  outline: none;
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+
+.checkbox::before {
+  content: "";
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background: lightgrey;
+  transition: 0.5s cubic-bezier(0.8, 0.5, 0.2, 1.2);
+}
+
+.checkbox:checked::before {
+  transform: translateX(1rem) rotateX(180deg);
+  background-color: grey;
+}
+
+.checkbox:checked ~ label {
+  color: green;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.btn-submit {
+  width: 5rem;
+  height: 4rem;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  font-size: 1rem;
+  color: darkgray;
+  transform: scale(0.75) rotateX(45deg) rotateY(-30deg) translateZ(4.5rem);
+  transform-origin: 50% 100%;
+  transform-style: preserve-3d;
+  transition: all 0.5s;
+  border-radius: 10px;
+  background-color: gray;
+  z-index: 50;
+}
+
+.btn-submit::before {
+  content: "";
+  position: absolute;
+  width: 5rem;
+  height: 4rem;
+  background-color: darkgray;
+  transition: all 0.5s;
+  border-radius: 10px;
+  transform: translateZ(12rem) translateX(6.8rem) translateY(13rem);
+}
+
+.btn-submit::after {
+  content: "Gönder";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  transform: translateZ(12rem) translateX(8.5rem) translateY(12.5rem);
+  width: 5rem;
+  height: 4rem;
+  background-color: lightgray;
+  color: rgb(56, 56, 56);
+  transition: all 0.5s;
+  border-radius: 10px;
+}
+
+.btn-submit:hover {
+  transform: scale(1);
+  color: white;
+  height: 50px;
+}
+
+.btn-submit:hover::after {
+  transform: translateZ(-10rem) translateX(-0rem) translateY(-2.2rem);
+  height: 50px;
+  content: "";
+}
+
+.btn-submit:hover::before {
+  transform: translateZ(-10rem) translateX(-0.8rem) translateY(-1rem);
+  height: 50px;
+}
+
+.btn-submit:focus-within::before {
+  transform: translateX(-100vh);
+  opacity: 0;
+}
+
+.btn-submit:focus-within::after {
+  transform: translateX(100vh);
+  opacity: 0;
+}
+
+.warning {
+  color: darkred;
+  font-size: 0.7rem;
+  position: relative;
+  display: none;
+  margin-bottom: 0.5rem;
+}
+
+.checkbox-container .warning {
+  margin-top: 9px;
+}
+
+.warning::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 0.25rem solid transparent;
+  border-right: 0.5rem solid darkred;
+  border-bottom: 0.25rem solid transparent;
+  transform: rotateZ(90deg);
+  bottom: 1rem;
+}
+
+.warning:last-child::before {
+  display: none;
+}
+
+@media only screen and (max-width: 500px) {
+  form {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+  }
+}

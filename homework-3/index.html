@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>odev-3-aykutsahinler</title>
+  </head>
+
+  <body>
+    <form class="form" action="javascript:void(0)" id="form1" novalidate>
+      <h1>FORM VALIDATION ODEVI</h1>
+      <div class="form-body">
+        <div class="input-container">
+          <input id="userName" type="text" autocomplete="off" required />
+          <label for="userName">Kullanıcı Adı:</label>
+          <span id="userNameWarning" class="warning"
+            >Kullanıcı Adı Boş Olamaz</span
+          >
+        </div>
+        <div class="input-container">
+          <input id="password" type="password" required />
+          <label for="password">Parola:</label>
+          <span id="passwordWarning" class="warning"
+            >Parola En Az 8 Karakter Olmalı</span
+          >
+        </div>
+        <div class="input-container">
+          <input id="mail" type="text" autocomplete="off" required />
+          <label>E-mail:</label>
+          <span id="eMailWarning" class="warning"
+            >E-mail adresinde '@' olması zorunludur</span
+          >
+        </div>
+        <div class="checkbox-container">
+          <input class="checkbox" id="checkBox" type="checkbox" required />
+          <label id="okey" for="">Kabul</label>
+          <span id="checkboxWarning" class="warning"
+            >Koşullar Kabul Edilmeli</span
+          >
+        </div>
+        <div class="btn-container">
+          <button class="btn-submit" id="submitButton">Gönder</button>
+        </div>
+      </div>
+    </form>
+    <script src="index.js"></script>
+  </body>
+</html>
